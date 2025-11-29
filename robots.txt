@@ -1,0 +1,8 @@
+# robots.txt para Destak Marcenaria
+
+# Permite que todos os robôs (User-agent: *) acessem todo o conteúdo (Disallow: /)
+User-agent: *
+Disallow: 
+
+# Indica onde o sitemap.xml está localizado.
+Sitemap: https://www.seusite.com.br/sitemap.xml
