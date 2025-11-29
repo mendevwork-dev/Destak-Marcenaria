@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destak Marcenaria | Móveis Planejados de Alto Padrão</title>
+    <meta name="description" content="Móveis planejados sob medida com design exclusivo e acabamento impecável.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fbf7f3',
+                            100: '#f5ebe1',
+                            500: '#b47d46', // Cor Dourado/Madeira (Para o 'MARCENARIA')
+                            600: '#966030',
+                            900: '#1a1816', // Cor Escura (Para o 'DESTAK')
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="logo.png" alt="Ícone D" class="h-10 w-auto object-contain">
+                    
+                    <div class="flex flex-col justify-center">
+                        <span class="font-serif text-2xl font-bold text-brand-900 leading-none tracking-wide">DESTAK</span>
+                        <span class="font-sans text-[0.65rem] text-brand-500 font-bold uppercase tracking-[0.35em] mt-0.5">Marcenaria</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-brand-500 font-medium transition-colors">Início</a>
+                    <a href="#sobre" class="text-gray-600 hover:text-brand-500 font-medium transition-colors">A Empresa</a>
+                    <a href="#servicos" class="text-gray-600 hover:text-brand-500 font-medium transition-colors">Serviços</a>
+                    <a href="projetos.html" class="text-gray-600 hover:text-brand-500 font-medium transition-colors">Portfólio</a>
+                    <a href="#contato" class="bg-brand-900 text-white px-6 py-2.5 rounded-full font-medium hover:bg-brand-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Solicitar Orçamento
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-900 hover:text-brand-500 focus:outline-none">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-gray-50 rounded-md">Início</a>
+                <a href="#sobre" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-gray-50 rounded-md">A Empresa</a>
+                <a href="#servicos" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-gray-50 rounded-md">Serviços</a>
+                <a href="projetos.html" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-gray-50 rounded-md">Portfólio</a>
+                <a href="#contato" class="block px-3 py-3 text-base font-bold text-brand-600 bg-brand-50 rounded-md mt-4 text-center">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Cozinha Planejada Luxo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gray-900/60 mix-blend-multiply"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-500/20 border border-brand-500/50 text-brand-100 text-sm font-semibold tracking-wider mb-6 reveal">
+                MARCENARIA DE ALTO PADRÃO
+            </span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight reveal" style="transition-delay: 100ms;">
+                Transformando Madeira <br> em <span class="text-brand-500 italic">Obras de Arte</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light reveal" style="transition-delay: 200ms;">
+                Projetos exclusivos que unem funcionalidade, elegância e a personalidade que o seu ambiente merece.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 300ms;">
+                <a href="#contato" class="px-8 py-4 bg-brand-500 text-white rounded-full font-semibold text-lg hover:bg-brand-600 transition-all shadow-lg hover:shadow-brand-500/30 flex items-center justify-center gap-2">
+                    Falar com Especialista
+                    <i class="ph-bold ph-arrow-right"></i>
+                </a>
+                <a href="projetos.html" class="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white rounded-full font-semibold text-lg hover:bg-white hover:text-brand-900 transition-all flex items-center justify-center">
+                    Ver Projetos
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/70">
+            <i class="ph ph-caret-down text-3xl"></i>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-100 rounded-tl-3xl -z-10"></div>
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-500 rounded-br-3xl -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Marceneiro trabalhando" class="rounded-xl shadow-2xl w-full h-[500px] object-cover">
+                    <div class="absolute bottom-10 -right-8 bg-white p-6 rounded-lg shadow-xl hidden md:block border-l-4 border-brand-500">
+                        <p class="text-4xl font-serif font-bold text-brand-900">15+</p>
+                        <p class="text-gray-600 text-sm font-medium uppercase tracking-wide">Anos de <br>Experiência</p>
+                    </div>
+                </div>
+                
+                <div class="reveal">
+                    <h2 class="text-brand-500 font-bold tracking-wider uppercase text-sm mb-2">Quem Somos</h2>
+                    <h3 class="text-4xl font-serif font-bold text-gray-900 mb-6">A Excelência em Cada Detalhe do Seu Móvel</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        A <span class="font-bold text-brand-600">Destak Marcenaria</span> nasceu da paixão por transformar ambientes. Não entregamos apenas móveis, entregamos soluções que otimizam espaço e elevam o padrão da sua casa ou escritório.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Utilizamos materiais de primeira linha, ferragens com tecnologia de amortecimento e acabamentos impecáveis. Nossa equipe de designers e marceneiros trabalha em sintonia para garantir que o projeto 3D se torne realidade com precisão milimétrica.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <i class="ph-fill ph-check-circle text-brand-500 text-xl"></i>
+                            <span class="text-gray-700 font-medium">Materiais 100% MDF de alta durabilidade</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph-fill ph-check-circle text-brand-500 text-xl"></i>
+                            <span class="text-gray-700 font-medium">Ferragens premium com garantia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph-fill ph-check-circle text-brand-500 text-xl"></i>
+                            <span class="text-gray-700 font-medium">Cumprimento rigoroso de prazos</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-24 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-brand-500 font-bold tracking-wider uppercase text-sm mb-2">Nossas Especialidades</h2>
+                <h3 class="text-4xl font-serif font-bold text-gray-900">Soluções Completas em Marcenaria</h3>
+                <p class="text-gray-600 mt-4">Do projeto à instalação, cuidamos de cada etapa para garantir a perfeição.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group reveal">
+                    <div class="w-14 h-14 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <i class="ph ph-cooking-pot text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Cozinhas Planejadas</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Design funcional que une beleza e praticidade para o coração da sua casa.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <i class="ph ph-bed text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Dormitórios & Closets</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Conforto e organização com aproveitamento inteligente de cada centímetro.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <i class="ph ph-briefcase text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Escritórios Corporativos</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Ambientes ergonômicos e sofisticados que transmitem a seriedade do seu negócio.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group reveal" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <i class="ph ph-television text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Home Theaters</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Painéis modernos com iluminação LED e design exclusivo para sua sala.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div>
+                    <h2 class="text-brand-500 font-bold tracking-wider uppercase text-sm mb-2">Nosso Portfólio</h2>
+                    <h3 class="text-4xl font-serif font-bold text-gray-900">Projetos Recentes</h3>
+                </div>
+                <a href="projetos.html" class="hidden md:flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors mt-4 md:mt-0">
+                    Ver Galeria Completa <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer reveal">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cozinha" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-400 text-sm font-bold uppercase tracking-wider">Residencial</span>
+                        <h4 class="text-white text-xl font-bold">Cozinha Minimalista Wood</h4>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer reveal" style="transition-delay: 100ms;">
+                    <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Quarto" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-400 text-sm font-bold uppercase tracking-wider">Dormitório</span>
+                        <h4 class="text-white text-xl font-bold">Suíte Master Clean</h4>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer reveal" style="transition-delay: 200ms;">
+                    <img src="https://images.unsplash.com/photo-1595515106969-1ce29569ff53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Escritório" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-400 text-sm font-bold uppercase tracking-wider">Corporativo</span>
+                        <h4 class="text-white text-xl font-bold">Office Tech Modern</h4>
+                    </div>
+                </div>
+                
+                 <div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer reveal lg:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Banheiro" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-400 text-sm font-bold uppercase tracking-wider">Banho</span>
+                        <h4 class="text-white text-xl font-bold">Lavabo em Madeira Maciça</h4>
+                    </div>
+                </div>
+
+                 <div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer reveal">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sala" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-400 text-sm font-bold uppercase tracking-wider">Sala de Estar</span>
+                        <h4 class="text-white text-xl font-bold">Painel 3D e Rack</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="projetos.html" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors">
+                    Ver Galeria Completa <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="relative py-24 bg-gray-900 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <h2 class="text-brand-500 font-bold tracking-wider uppercase text-sm mb-2">Fale Conosco</h2>
+                    <h3 class="text-4xl font-serif font-bold mb-6">Vamos Realizar Seu Projeto?</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed text-lg">
+                        Preencha o formulário para solicitar um orçamento sem compromisso. Nossa equipe entrará em contato para agendar uma visita técnica ou discutir suas ideias.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 text-brand-500">
+                                <i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold">WhatsApp</h4>
+                                <p class="text-gray-400">(11) 99999-8888</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 text-brand-500">
+                                <i class="ph-fill ph-envelope-simple text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold">E-mail</h4>
+                                <p class="text-gray-400">contato@destakmarcenaria.com.br</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 text-brand-500">
+                                <i class="ph-fill ph-map-pin text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold">Atendimento</h4>
+                                <p class="text-gray-400">São Paulo e Região Metropolitana</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-2xl reveal">
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors text-gray-900" placeholder="Seu nome" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefone/WhatsApp</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors text-gray-900" placeholder="(11) 90000-0000" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors text-gray-900" placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="interest" class="block text-sm font-medium text-gray-700 mb-1">Tenho interesse em:</label>
+                            <select id="interest" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors text-gray-900 bg-white">
+                                <option>Cozinha Planejada</option>
+                                <option>Dormitório/Closet</option>
+                                <option>Home Office</option>
+                                <option>Projeto Comercial</option>
+                                <option>Outros</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors text-gray-900" placeholder="Conte um pouco sobre seu projeto..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-600 text-white font-bold py-4 rounded-lg hover:bg-brand-700 transition-all transform hover:-translate-y-1 shadow-lg">
+                            ENVIAR MENSAGEM
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 text-gray-400 py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-1">
+                    
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="logo.png" alt="Destak Marcenaria" class="h-10 w-auto object-contain bg-white/5 rounded-md p-1">
+                        
+                        <div class="flex flex-col justify-center">
+                            <span class="font-serif text-xl font-bold text-white leading-none tracking-wide">DESTAK</span>
+                            <span class="font-sans text-[0.6rem] text-brand-500 font-bold uppercase tracking-[0.35em] mt-0.5">Marcenaria</span>
+                        </div>
+                    </div>
+
+                    <p class="text-sm">Marcenaria de alto padrão focada em qualidade, design e satisfação do cliente.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-4">Navegação</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-brand-500 transition-colors">Início</a></li>
+                        <li><a href="#sobre" class="hover:text-brand-500 transition-colors">Quem Somos</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-500 transition-colors">Serviços</a></li>
+                        <li><a href="projetos.html" class="hover:text-brand-500 transition-colors">Portfólio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-4">Serviços</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li>Cozinhas Planejadas</li>
+                        <li>Dormitórios & Closets</li>
+                        <li>Móveis Corporativos</li>
+                        <li>Home Theaters</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-4">Redes Sociais</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all">
+                            <i class="ph-fill ph-instagram-logo text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all">
+                            <i class="ph-fill ph-facebook-logo text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all">
+                            <i class="ph-fill ph-pinterest-logo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-xs text-center md:text-left">&copy; 2023 Destak Marcenaria. Todos os direitos reservados.</p>
+                <p class="text-xs mt-2 md:mt-0">Design Moderno & Profissional</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5571999812034" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all hover:scale-110 flex items-center justify-center animate-bounce-slow">
+        <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+    </a>
+
+    <script>
+        // Menu Mobile
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')){
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            } else {
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+            }
+        });
+
+        // Fechar menu ao clicar em link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.add('bg-white/95');
+                navbar.classList.remove('bg-white/90');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('bg-white/90');
+                navbar.classList.remove('bg-white/95');
+            }
+        });
+
+        // Animação de Scroll (Reveal)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+</html>
